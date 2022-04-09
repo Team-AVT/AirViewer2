@@ -4,7 +4,7 @@
 Sprint 1
 
 
-User story 1 (Issue: #1)
+User story 1 (Issue: #1) (Story points: 13)
 Status: assigned @Dorayya62 sprint 1 4pts priority 1: issue no #2: writing a class with a method to add blank pages to the existing pdf.
 Assigned @dorayya62 sprint 1 1pts priority 2: issue no #3: Writing test cases to evaluate the working of add blank pages method and provide code coverage.
 Assigned @dorayya62 sprint 1 2pts priority 3: issue no #4: Set the User Interface button to add pages, on clicking which opens a dialogue box that asks the user the number of blank pages to add.
@@ -15,7 +15,7 @@ Assigned @dorayya62 sprint 1 2pts priority 3: issue no #7: Set the User Interfac
 
 
 
-User story 2 (Issue: #8)
+User story 2 (Issue: #8) (Story points: 13)
 status: assigned @pajayreddy sprint 1 2pts priority 1: issue no #9: Write a function that converts a pdf into a WORD document.
 assigned @pajayreddy sprint 1 1pts priority 2: issue no #10: writing test cases to check the code functionality of converting to word function and providing code coverage.
 assigned @pajayreddy sprint 1 2pts priority 1: issue no #11: Write a function that converts pdf into a HTML.
