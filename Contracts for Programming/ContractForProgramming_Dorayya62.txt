@@ -11,7 +11,7 @@ Contract for Programming:
 class Addpages {
 String numberOfPages;
 String filePath;
-int parsedNumberOfPages;
+double parsedNumberOfPages;
 
 
 /**
@@ -19,8 +19,8 @@ int parsedNumberOfPages;
 */
 public AddPages (String filePath, String numberOfPages){
      this. filePath = filePath;
-	   this. numberOfPages = numberOfPages;
-     parsedNumberOfPages = Integer.parseInt(numberOfPages);
+     this. numberOfPages = numberOfPages;
+     parsedNumberOfPages = Double.parseDouble(numberOfPages);
 }
 
 /**
@@ -28,6 +28,11 @@ public AddPages (String filePath, String numberOfPages){
 *@post ("result == true")
 */
 public boolean addPages() throws IOException{
+      int intNumberOfPages = (int) parsedNumberOfPages ;
+      ---
+      ---
+      ---
+      ---
 }
 }
 
