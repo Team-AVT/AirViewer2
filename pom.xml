@@ -20,11 +20,13 @@
 	</repositories>
 	<dependencies>
 	<dependency>
+		<!-- Dependency for adding contract annotations -->
 			<groupId>com.google.java.contract</groupId>
 			<artifactId>cofoja</artifactId>
 			<version>1.1-r150</version>
 		</dependency>
 		<dependency>
+			<!-- Dependency for adding aspose.pdf library for new enhancements -->
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-pdf</artifactId>
 			<version>19.12</version>
@@ -66,6 +68,7 @@
 	<build>
 		<plugins>
 			<plugin>
+				<!-- plugin for jacoco code coverage -->
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.3</version>
