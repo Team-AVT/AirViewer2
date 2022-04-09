@@ -47,3 +47,57 @@ public boolean addPages() throws IOException{
 @post-condition: The condition "result == true" must be true when addPages()  method finished executing.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.	Class DeletePages
+
+/**
+ * @invariant ("pageNumber != null && pageNumber.length() > 0")
+ */
+
+public class DeletePages {
+
+	String pageNumber;
+	String filePath;
+	int parsedPageNumber;
+	File file = null;
+	PDDocument document = null;
+	int noOfPages;
+	
+           /**
+             * @pre ("pageNumber != null && pageNumber.length() > 0")
+             */
+	public DeletePages(String pageNumber, String filePath) {
+		super();
+		this.pageNumber = pageNumber;
+		this.filePath = filePath;
+		parsedPageNumber = Integer.parseInt(pageNumber) - 1;
+		// Loading the file
+		file = new File(filePath);
+		// Getting the count of pages from document
+		noOfPages = document.getNumberOfPages();
+	}
+
+	
+	/**
+	 * @pre ("noOfPages >= parsedPageNumber")
+	 * @post ("result == true")
+	 */
+	public boolean deletePage() throws IOException {
+       }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@ Invariant: The condition “pageNumber != null” and “pageNumber.length() > 0” must be true of a class whenever it is accessible to the client.
+
+@pre-condition: 
+1.	The condition “pageNumber != null” and “pageNumber.length() > 0” must be true before the constructor method can execute.
+2.	The condition "noOfPages >= parsedPageNumber" must be true before the deletePage() method can execute.
+
+@post-condition: The condition "result == true" must be true when deletePage()  method finished executing.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
