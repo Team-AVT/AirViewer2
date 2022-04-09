@@ -29,7 +29,6 @@ public class DeletePages {
 	File file = null;
 	PDDocument document = null;
 	int noOfPages;
-	int noOfPages1;
 	
 	/**
 	 * This constructor takes the "filePath" and "pageNumber" as a parameters.
