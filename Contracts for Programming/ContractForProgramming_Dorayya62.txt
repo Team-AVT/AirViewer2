@@ -1,1 +1,44 @@
+Contract for Programming:
 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.	Class Addpages
+
+/**
+*@invariant ("numberOfPages != null && numberOfPages.length() > 0")
+*/
+class Addpages {
+String numberOfPages;
+String filePath;
+int parsedNumberOfPages;
+
+
+/**
+*@pre ("numberOfPages != null && numberOfPages.length() > 0")
+*/
+public AddPages (String filePath, String numberOfPages){
+     this. filePath = filePath;
+	   this. numberOfPages = numberOfPages;
+     parsedNumberOfPages = Integer.parseInt(numberOfPages);
+}
+
+/**
+*@pre ("parsedNumberOfPages >= 1.0 ")
+*@post ("result == true")
+*/
+public boolean addPages() throws IOException{
+}
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@ Invariant: The condition “numberOfPages != null” and “numberOfPages.length() > 0” must be true of a class whenever it is accessible to the client.
+
+@pre-condition: 
+1.	The condition “numberOfPages != null” and “numberOfPages.length() > 0” must be true before the constructor method can execute.
+2.	The condition " parsedNumberOfPages >= 1.0 " must be true before the addPages() method can execute.
+
+@post-condition: The condition "result == true" must be true when addPages()  method finished executing.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
