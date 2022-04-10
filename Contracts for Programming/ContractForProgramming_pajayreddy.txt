@@ -1,1 +1,48 @@
+Contract for Programming:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.	Class ToDoc:
+
+/**
+ * @invariant ("filePath != null && filePath.length() > 0")
+ */
+
+public class ToDoc {
+	
+	String filePath;
+	
+	
+  /**
+	 * @pre ("filePath != null && filePath.length() > 0")
+	 */
+	
+	public ToDoc(String filePath) {
+		super();
+		this.filePath = filePath;
+	}
+
+	
+  /**
+	 * @pre ("filePath != null && filePath.length() > 0")
+	 * @post ("result == true")
+	 */
+	
+	public boolean convertToDoc() {
+		
+	}
+
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@ Invariant: The condition "filePath != null” and “filePath.length() > 0" must be true of a class whenever it is accessible to the client.
+
+@pre-condition: 
+1.	The condition "filePath != null”  and "filePath.length() > 0”  must be true before the constructor method can execute.
+2.	The condition "filePath != null " and "filePath.length() > 0”  must be true before the convertToDoc () method can execute.
+@post-condition: The condition "result == true" must be true when convertToDoc ()  method finished executing.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
