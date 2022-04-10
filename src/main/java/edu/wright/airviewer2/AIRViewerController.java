@@ -77,6 +77,9 @@ public class AIRViewerController implements Initializable {
     
     @FXML
     private MenuItem addPagesMenuItem;
+	
+    @FXML
+    private MenuItem deletePagesMenuItem;
 
     private AIRViewerModel model;
 
@@ -156,6 +159,7 @@ public class AIRViewerController implements Initializable {
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         
         assert addPagesMenuItem != null : "fx:id=\"addPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert deletePagesMenuItem != null : "fx:id=\"deletePagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         if (null != model) {
             pagination.setPageCount(model.numPages());
@@ -172,6 +176,7 @@ public class AIRViewerController implements Initializable {
             deleteAnnotationMenuItem.setDisable(0 >= model.getSelectionSize());
             
             addPagesMenuItem.setDisable(false);
+	    deletePagesMenuItem.setDisable(false);
 
             if (null != currentPageImageView) {
                 int pageIndex = pagination.getCurrentPageIndex();
@@ -223,6 +228,7 @@ public class AIRViewerController implements Initializable {
             deleteAnnotationMenuItem.setDisable(true);
             
             addPagesMenuItem.setDisable(true);
+	    deletePagesMenuItem.setDisable(true);
         }
     }
 
@@ -241,6 +247,7 @@ public class AIRViewerController implements Initializable {
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         
          assert addPagesMenuItem != null : "fx:id=\"addPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	 assert deletePagesMenuItem != null : "fx:id=\"deletePagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         model = aModel;
 
@@ -380,7 +387,57 @@ public class AIRViewerController implements Initializable {
               }
 
             });
+	     deletePagesMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            	@Override
+              public void handle(ActionEvent e) {
+              	// logic to take input 
+              	
+               	
+              	Dialog<String>  dialog = new Dialog<String>();
+              	dialog.setTitle("Delete Page Dialog Box");
+              	
+              	ButtonType ok = new ButtonType("Ok", ButtonData.OK_DONE);
+              	ButtonType cancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+                  
+                  //Setting the content of the dialog
+                  dialog.setContentText("Delete Page");
+                
+                  //Adding buttons to the dialog pane
+                  dialog.getDialogPane().getButtonTypes().add(ok);
+                  dialog.getDialogPane().getButtonTypes().add(cancel);
+                  //Setting the label
 
+                 Label numberLabel = new Label("Enter the valid page number of PDF to delete");
+              	
+                 TextField number = new TextField();
+                 
+                 
+                 VBox vBox = new VBox();
+
+                 vBox.setSpacing(8);
+                 vBox.setPadding(new Insets(10,10,10,10));
+                 vBox.getChildren().addAll(
+                    numberLabel, number);
+                 
+                 dialog.getDialogPane().setContent(vBox); 
+              	
+                 dialog.showAndWait();
+                 
+                 System.out.println(number.getText());
+          	   
+                 DeletePages delObj = new DeletePages(number.getText(), model.getStrPath());
+                 
+                 try {
+					delObj.deletePage();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+                 
+                  refreshUserInterface();
+              }
+
+            });
         }
 
         refreshUserInterface();
