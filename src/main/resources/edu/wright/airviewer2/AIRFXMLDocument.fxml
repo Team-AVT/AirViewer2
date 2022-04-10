@@ -34,6 +34,9 @@
                   <MenuItem fx:id="addEllipseAnnotationMenuItem" mnemonicParsing="false" text="Add Ellipse Annotation" />
                   <MenuItem fx:id="addTextAnnotationMenuItem" mnemonicParsing="false" text="Add Text Annotation" />
               <MenuItem fx:id="deleteAnnotationMenuItem" mnemonicParsing="false" text="Delete Annotation" />
+               
+               <MenuItem fx:id="addPagesMenuItem" mnemonicParsing="false" text="Add Blank Pages" />
+               
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

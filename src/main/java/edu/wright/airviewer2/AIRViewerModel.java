@@ -27,11 +27,21 @@ public class AIRViewerModel extends DocumentCommandWrapper {
     //private static final Logger logger = Logger.getLogger(AIRViewerModel.class.getName());
 
     private PDFRenderer renderer;
+    
+    private String strPath;
 
     AIRViewerModel(Path path) throws IOException {
         super(PDDocument.load(path.toFile()), "");
+        this.strPath = path.toString();
         renderer = new PDFRenderer(wrappedDocument);
     }
+    
+    /**
+	 * @return the strPath
+	 */
+	public String getStrPath() {
+		return strPath;
+	}
 
     int numPages() {
         return wrappedDocument.getPages().getCount();

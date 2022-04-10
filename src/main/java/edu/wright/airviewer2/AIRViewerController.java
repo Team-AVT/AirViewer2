@@ -74,6 +74,9 @@ public class AIRViewerController implements Initializable {
 
     @FXML
     private MenuItem deleteAnnotationMenuItem;
+    
+    @FXML
+    private MenuItem addPagesMenuItem;
 
     private AIRViewerModel model;
 
@@ -151,6 +154,8 @@ public class AIRViewerController implements Initializable {
         assert addEllipseAnnotationMenuItem != null : "fx:id=\"addEllipseAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert addTextAnnotationMenuItem != null : "fx:id=\"addTextAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        
+        assert addPagesMenuItem != null : "fx:id=\"addPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         if (null != model) {
             pagination.setPageCount(model.numPages());
@@ -165,6 +170,8 @@ public class AIRViewerController implements Initializable {
             addEllipseAnnotationMenuItem.setDisable(false);
             addTextAnnotationMenuItem.setDisable(false);
             deleteAnnotationMenuItem.setDisable(0 >= model.getSelectionSize());
+            
+            addPagesMenuItem.setDisable(false);
 
             if (null != currentPageImageView) {
                 int pageIndex = pagination.getCurrentPageIndex();
@@ -214,7 +221,8 @@ public class AIRViewerController implements Initializable {
             addEllipseAnnotationMenuItem.setDisable(true);
             addTextAnnotationMenuItem.setDisable(true);
             deleteAnnotationMenuItem.setDisable(true);
-
+            
+            addPagesMenuItem.setDisable(true);
         }
     }
 
@@ -231,6 +239,8 @@ public class AIRViewerController implements Initializable {
         assert addEllipseAnnotationMenuItem != null : "fx:id=\"addEllipseAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert addTextAnnotationMenuItem != null : "fx:id=\"addTextAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        
+         assert addPagesMenuItem != null : "fx:id=\"addPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         model = aModel;
 
@@ -319,6 +329,58 @@ public class AIRViewerController implements Initializable {
                     refreshUserInterface();
                 }
             });
+            addPagesMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            	@Override
+              public void handle(ActionEvent e) {
+              	// logic to take input 
+              	
+               	
+              	Dialog<String>  dialog = new Dialog<String>();
+              	dialog.setTitle("Add Pages Dialog Box");
+              	
+              	ButtonType ok = new ButtonType("Ok", ButtonData.OK_DONE);
+              	ButtonType cancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+                  
+                  //Setting the content of the dialog
+                  dialog.setContentText("Add Pages");
+                
+                  //Adding buttons to the dialog pane
+                  dialog.getDialogPane().getButtonTypes().add(ok);
+                  dialog.getDialogPane().getButtonTypes().add(cancel);
+                  //Setting the label
+
+                 Label numberLabel = new Label("Enter the number of Blank Pages to add");
+              	
+                 TextField number = new TextField();
+                 
+                 
+                 VBox vBox = new VBox();
+
+                 vBox.setSpacing(8);
+                 vBox.setPadding(new Insets(10,10,10,10));
+                 vBox.getChildren().addAll(
+                    numberLabel, number);
+                 
+                 dialog.getDialogPane().setContent(vBox); 
+              	
+                 dialog.showAndWait();
+                 
+                 System.out.println(number.getText());
+          	   
+                 AddPages addObj = new AddPages(model.getStrPath(), number.getText());
+                 
+                 try {
+					addObj.addPages();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+                  
+                  refreshUserInterface();
+              }
+
+            });
+
         }
 
         refreshUserInterface();
