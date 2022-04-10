@@ -48,6 +48,12 @@ public class DeletePages {
 		parsedPageNumber = Integer.parseInt(pageNumber) - 1;
 		// Loading the file
 		file = new File(filePath);
+		try {
+			document = PDDocument.load(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// Getting the count of pages from document
 		noOfPages = document.getNumberOfPages();
 	}
