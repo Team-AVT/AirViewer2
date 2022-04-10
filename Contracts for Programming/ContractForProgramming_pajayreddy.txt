@@ -1,1 +1,48 @@
+Contract for Programming:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Class ToDoc:
+
+/**
+ * @invariant ("originalFilePath != null && originalFilePath.length() > 0")
+ */
+
+public class ToDoc {
+	
+String originalFilePath;
+String convertedFilePath;
+
+  
+  /**
+   * @pre ("originalFilePath != null && originalFilePath.length() > 0")
+   */
+  public ToDoc(String originalFilePath) {
+	super();
+	this.originalFilePath = originalFilePath;
+	convertedFilePath = originalFilePath.replace("pdf", "doc");
+   }
+
+	
+  /**
+   * @pre ("convertedFilePath != null && convertedFilePath.length() > 0")
+   * @post ("result == true")
+   */
+  public boolean convertToDoc() {
+		
+   }
+
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@ Invariant: The condition "originalFilePath != null” and “originalFilePath.length() > 0" must be true of a class whenever it is accessible to the client.
+
+@pre-condition: 
+1.	The condition "originalFilePath != null”  and "originalFilePath.length() > 0”  must be true before the constructor method can execute.
+2.	The condition "convertedFilePath != null " and "convertedFilePath.length() > 0”  must be true before the convertToDoc () method can execute.
+@post-condition: The condition "result == true" must be true when convertToDoc ()  method finished executing.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
