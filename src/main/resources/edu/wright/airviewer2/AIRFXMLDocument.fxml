@@ -36,6 +36,7 @@
               <MenuItem fx:id="deleteAnnotationMenuItem" mnemonicParsing="false" text="Delete Annotation" />
                
                <MenuItem fx:id="addPagesMenuItem" mnemonicParsing="false" text="Add Blank Pages" />
+               <MenuItem fx:id="deletePagesMenuItem" mnemonicParsing="false" text="Delete a Page" />
                
             </items>
           </Menu>
