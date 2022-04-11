@@ -86,3 +86,47 @@ String convertedFilePath;
 1.	The condition "originalFilePath != null”  and "originalFilePath.length() > 0”  must be true before the constructor method can execute.
 2.	The condition "convertedFilePath != null " and "convertedFilePath.length() > 0”  must be true before the convertToPPT () method can execute.
 @post-condition: The condition "result == true" must be true when convertToPPT ()  method finished executing.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Class ToHTML:
+
+/**
+ * @invariant ("originalFilePath != null && originalFilePath.length() > 0")
+ */
+
+public class ToHTML {
+	
+String originalFilePath;
+String convertedFilePath;
+
+  
+  /**
+   * @pre ("originalFilePath != null && originalFilePath.length() > 0")
+   */
+  public ToHTML(String originalFilePath) {
+	super();
+	this.originalFilePath = originalFilePath;
+	convertedFilePath = originalFilePath.replace("pdf", "html");
+   }
+
+	
+  /**
+   * @pre ("convertedFilePath != null && convertedFilePath.length() > 0")
+   * @post ("result == true")
+   */
+  public boolean convertToHTML() {
+		
+   }
+
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@ Invariant: The condition "originalFilePath != null” and “originalFilePath.length() > 0" must be true of a class whenever it is accessible to the client.
+
+@pre-condition: 
+1.	The condition "originalFilePath != null”  and "originalFilePath.length() > 0”  must be true before the constructor method can execute.
+2.	The condition "convertedFilePath != null " and "convertedFilePath.length() > 0”  must be true before the convertToHTML () method can execute.
+@post-condition: The condition "result == true" must be true when convertToHTML ()  method finished executing.
