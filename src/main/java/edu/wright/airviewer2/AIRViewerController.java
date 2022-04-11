@@ -80,6 +80,15 @@ public class AIRViewerController implements Initializable {
 	
     @FXML
     private MenuItem deletePagesMenuItem;
+	
+    @FXML
+    private MenuItem toDocMenuItem;
+    
+    @FXML
+    private MenuItem toPPTMenuItem;
+    
+    @FXML
+    private MenuItem toHTMLMenuItem;
 
     private AIRViewerModel model;
 
@@ -160,6 +169,10 @@ public class AIRViewerController implements Initializable {
         
         assert addPagesMenuItem != null : "fx:id=\"addPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert deletePagesMenuItem != null : "fx:id=\"deletePagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	    
+	assert toDocMenuItem != null : "fx:id=\"toDocMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        assert toPPTMenuItem != null : "fx:id=\"toPPTMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        assert toHTMLMenuItem != null : "fx:id=\"toHTMLMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         if (null != model) {
             pagination.setPageCount(model.numPages());
@@ -177,6 +190,10 @@ public class AIRViewerController implements Initializable {
             
             addPagesMenuItem.setDisable(false);
 	    deletePagesMenuItem.setDisable(false);
+		
+	    toDocMenuItem.setDisable(false);
+            toPPTMenuItem.setDisable(false);
+            toHTMLMenuItem.setDisable(false);
 
             if (null != currentPageImageView) {
                 int pageIndex = pagination.getCurrentPageIndex();
@@ -229,6 +246,10 @@ public class AIRViewerController implements Initializable {
             
             addPagesMenuItem.setDisable(true);
 	    deletePagesMenuItem.setDisable(true);
+		
+	    toDocMenuItem.setDisable(true);
+            toPPTMenuItem.setDisable(true);
+            toHTMLMenuItem.setDisable(true);
         }
     }
 
@@ -246,8 +267,12 @@ public class AIRViewerController implements Initializable {
         assert addTextAnnotationMenuItem != null : "fx:id=\"addTextAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         
-         assert addPagesMenuItem != null : "fx:id=\"addPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
-	 assert deletePagesMenuItem != null : "fx:id=\"deletePagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        assert addPagesMenuItem != null : "fx:id=\"addPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert deletePagesMenuItem != null : "fx:id=\"deletePagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	    
+	assert toDocMenuItem != null : "fx:id=\"toDocMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        assert toPPTMenuItem != null : "fx:id=\"toPPTMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        assert toHTMLMenuItem != null : "fx:id=\"toHTMLMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         model = aModel;
 
@@ -437,6 +462,32 @@ public class AIRViewerController implements Initializable {
                   refreshUserInterface();
               }
 
+            });
+		
+	    toDocMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                	
+                	ToDoc docObj = new ToDoc(model.getStrPath());
+                    docObj.convertToDoc();
+                    refreshUserInterface();
+                }
+            });
+            toPPTMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                    ToPPT pptObj = new ToPPT(model.getStrPath());
+                    pptObj.convertToPPT();
+                    refreshUserInterface();
+                }
+            });
+            toHTMLMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                	ToHTML htmlObj = new ToHTML(model.getStrPath());
+                    htmlObj.convertToHTML();
+                    refreshUserInterface();
+                }
             });
         }
 
