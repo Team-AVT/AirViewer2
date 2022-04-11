@@ -40,6 +40,16 @@
                
             </items>
           </Menu>
+           
+           <Menu mnemonicParsing="false" text="Convert">
+            <items>
+                  <MenuItem fx:id="toDocMenuItem" mnemonicParsing="false" text="To Doc" />
+                  <MenuItem fx:id="toPPTMenuItem" mnemonicParsing="false" text="To PPT" />
+                  <MenuItem fx:id="toHTMLMenuItem" mnemonicParsing="false" text="To HTML" />
+                  
+            </items>
+          </Menu>
+           
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
