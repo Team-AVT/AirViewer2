@@ -1,0 +1,20 @@
+what went well.
+
+-Good collaboration with the team.
+-having meetings betweem mid sprints to discuss future stories and resolve problems.
+-short sprints helped to achieve team performance and estimation.
+-project deliverables were not set so, and adapted to changes in code without much disruption.
+
+what could be improved
+
+-Before picking any user story, picking each user story should have clear acceptance criteria.
+-can improve on the concepts of literate programming.
+-can improve on the concepts of programming by contract.
+-Estimation of time required to complete the tasks/user-stories.
+
+
+points of work accepted for the Sprint.
+
+-for this sprint we have assigned a total of 13 points per user story and divided those points to individual tasks. 
+-Based on the time taken to complete each individual task, each task has been assigned different points.
+-In the sprint 1 all tasks have been completed and total points achieved.(for points and tasks refer https://github.com/Team-AVT/AirViewer2/blob/master/ProductBacklog.txt)
