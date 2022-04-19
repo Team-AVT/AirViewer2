@@ -25,7 +25,25 @@ assigned @pajayreddy sprint 1 1pts priority 2: issue no #14: writing test cases 
 assigned @pajayreddy sprint 1 4pts priority 3: issue no 15: adding UI buttons for users to convert pdf into WORD, PPT, and HTML.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Sprint 2
 
+User story 3 (Issue: #46) (Story points:5)
+status: assigned @pajayreddy sprint 2 2pts priority 1: issue no #47: Write a class with a method to set a password for the existing pdf.
+assigned @pajayreddy sprint 2 1pts priority 2: issue no #48: Write Test cases to evaluate the working of the set password method and provide code coverage Task
+assigned @pajayreddy sprint 2 2pts priority 3: issue no #49: setting a User Interface button for the password setup, on clicking it, opens a dialogue box that asks the users to enter a password.
+
+
+User Story 4(Issue: #50) (Story points:13)
+
+Status: assigned @Dorayya62 sprint 2 1pt priority 1: issue no #51: Write a class with a method to highlight a particular text in the PDF                  
+assigned @Dorayya62 sprint 2 1pts priority 2: issue no #52: Write test cases to evaluate the working of highlight text method and provide code coverage   
+assigned @Dorayya62 sprint 2 1pts priority 3: issue no #53: Set the User Interface button to highlight text, on clicking which opens a dialogue box that asks the user to enter the text he want to highlight                                      
+assigned @Dorayya62 sprint 2 2pts priority 1: issue no #54: Write a class with a method to change font size of a particular text in the PDF               
+assigned @Dorayya62 sprint 2 1pts priority 2: issue no #55: Write test cases to evaluate the working of change font size method and provide code coverage.    
+assigned @Dorayya62 sprint 2 2pts priority 3: issue no #56: Set the User Interface button to change font size, on clicking which opens a dialogue box that asks the user to enter the text for which he wants to change the font size and size of the font. 
+assigned @Dorayya62 sprint 2 2pts priority 1: issue no #57: Write a class with a method to replace a particular text with an other text in the PDF
+assigned @Dorayya62 sprint 2 1pts priority 2: issue no #58: Write test cases to evaluate the working of replace text method and provide code coverage             
+assigned @Dorayya62 sprint 2 2pts priority 3: issue no #59: Set the User Interface button to replace text, on clicking which opens a dialogue box that asks the user to enter the text he want to replace and also the text he want to replace with.
 
 
 
