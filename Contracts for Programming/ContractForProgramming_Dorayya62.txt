@@ -138,6 +138,47 @@ public class HighlightText {
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.	Class ReplaceText
+
+/**
+ * @invariant ("replaceText != null && replaceText.length() > 0 && withText != null && withText.length() > 0")
+*/
+
+public class ReplaceText {
+	
+	String filePath;
+	String replaceText;
+	String withText;
+	
+	
+/**
+ * @pre ("replaceText != null && replaceText.length() > 0 && withText != null && withText.length() > 0")
+ */
+	public ReplaceText(String filePath, String replaceText, String withText) {
+		super();
+		this.filePath = filePath;
+		this.replaceText = replaceText;
+		this.withText = withText;
+	}
+
+/**
+ * @pre ("replaceText != null && replaceText.length() > 0 && withText != null && withText.length() > 0")
+ * @post ("result == true")
+ */
+	public boolean replaceText() {
+
+    }
+	
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@ Invariant: The condition "replaceText != null”, “replaceText.length() > 0”, “withText != null” and “withText.length() > 0" must be true of a class whenever it is accessible to the client.
+
+@pre-condition: 
+1.The condition "replaceText != null”, “replaceText.length() > 0”, “withText != null” and “withText.length() > 0" must be true before the constructor method can execute.
+2.The condition "replaceText != null”, “replaceText.length() > 0”, “withText != null” and “withText.length() > 0" must be true before the replaceText() method can execute.
+
+@post-condition: The condition "result == true" must be true when replaceText ()  method finished executing.
 
 
 
