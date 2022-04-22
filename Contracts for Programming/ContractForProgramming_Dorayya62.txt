@@ -180,6 +180,46 @@ public class ReplaceText {
 
 @post-condition: The condition "result == true" must be true when replaceText ()  method finished executing.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.	Class SetFontSize
 
+/**
+ * @invariant ("text != null && text.length() > 0 && fontSize != null && fontSize.length() > 0")
+ */
+public class SetFontSize {
+	
+	String filePath;
+	String text;
+	String fontSize;
+	
+/**
+ * @pre ("text != null && text.length() > 0 && fontSize != null && fontSize.length() > 0")
+ */
+	public SetFontSize(String filePath, String text, String fontSize) {
+		super();
+		this.filePath = filePath;
+		this.text = text;
+		this.fontSize = fontSize;
+	}
+	
+/**
+ * @pre ("text != null && text.length() > 0 && fontSize != null && fontSize.length() > 0")
+ * @post ("result == true")	
+ */
+	public boolean setFontSize() {
+		
+	}
+ 
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@ Invariant: The condition " text!= null”, “text.length() > 0”, “fontSize!= null” and “fontSize.length() > 0" must be true of a class whenever it is accessible to the client.
 
+@pre-condition: 
+1.The condition " text!= null”, “text.length() > 0”, “fontSize!= null” and “fontSize.length() > 0" must be true before the constructor method can execute.
+2.The condition " text!= null”, “text.length() > 0”, “fontSize!= null” and “fontSize.length() > 0" must be true before the replaceText() method can execute.
+
+@post-condition: The condition "result == true" must be true when setFontSize ()  method finished executing.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
