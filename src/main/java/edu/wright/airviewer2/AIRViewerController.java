@@ -103,6 +103,9 @@ public class AIRViewerController implements Initializable {
 	
     @FXML
     private MenuItem replaceTextMenuItem;
+    
+    @FXML
+    private MenuItem setFontSizeMenuItem;
 
     private AIRViewerModel model;
 
@@ -190,6 +193,7 @@ public class AIRViewerController implements Initializable {
 	    
 	assert highlightTextMenuItem != null : "fx:id=\"highlightTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert replaceTextMenuItem != null : "fx:id=\"replaceTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert setFontSizeMenuItem != null : "fx:id=\"setFontSizeMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         if (null != model) {
             pagination.setPageCount(model.numPages());
@@ -214,6 +218,7 @@ public class AIRViewerController implements Initializable {
 		
 	    highlightTextMenuItem.setDisable(false);
 	    replaceTextMenuItem.setDisable(false);
+	    setFontSizeMenuItem.setDisable(false);
 
 
             if (null != currentPageImageView) {
@@ -274,6 +279,7 @@ public class AIRViewerController implements Initializable {
 		
 	    highlightTextMenuItem.setDisable(true);
 	    replaceTextMenuItem.setDisable(true);
+	    setFontSizeMenuItem.setDisable(true);
         }
     }
 
@@ -300,6 +306,7 @@ public class AIRViewerController implements Initializable {
 	    
 	assert highlightTextMenuItem != null : "fx:id=\"highlightTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert replaceTextMenuItem != null : "fx:id=\"replaceTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert setFontSizeMenuItem != null : "fx:id=\"setFontSizeMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         model = aModel;
 
@@ -609,6 +616,57 @@ public class AIRViewerController implements Initializable {
                  ReplaceText replaceObj = new ReplaceText(model.getStrPath(), number.getText(), number1.getText());
                  
                  replaceObj.replaceText();
+          	   
+              //model.getStrPath() 
+                 
+                  refreshUserInterface();
+              }
+
+            });
+	    setFontSizeMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            	@Override
+              public void handle(ActionEvent e) {
+              	// logic to take input 
+              	
+               	
+              	Dialog<String>  dialog = new Dialog<String>();
+              	dialog.setTitle("Set Font Size Dialog Box");
+              	
+              	ButtonType ok = new ButtonType("Ok", ButtonData.OK_DONE);
+              	ButtonType cancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+                  
+                  //Setting the content of the dialog
+                  dialog.setContentText("Set Font Size");
+                
+                  //Adding buttons to the dialog pane
+                  dialog.getDialogPane().getButtonTypes().add(ok);
+                  dialog.getDialogPane().getButtonTypes().add(cancel);
+                  //Setting the label
+
+                 Label numberLabel = new Label("Enter the valid text in PDF to set font size");
+              	
+                 TextField number = new TextField();
+                 
+                 Label numberLabel1 = new Label("Enter the font size to change");
+               	
+                 TextField number1 = new TextField();
+                 
+                 
+                 VBox vBox = new VBox();
+
+                 vBox.setSpacing(8);
+                 vBox.setPadding(new Insets(10,10,10,10));
+                 vBox.getChildren().addAll(
+                    numberLabel, number, numberLabel1, number1);
+                 
+                 dialog.getDialogPane().setContent(vBox); 
+              	
+                 dialog.showAndWait();
+                 
+          	   
+                 SetFontSize fontObj = new SetFontSize(model.getStrPath(), number.getText(), number1.getText());
+                 
+                 fontObj.setFontSize();
           	   
               //model.getStrPath() 
                  
