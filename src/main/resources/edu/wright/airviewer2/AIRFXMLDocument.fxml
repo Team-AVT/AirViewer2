@@ -39,6 +39,7 @@
                <MenuItem fx:id="deletePagesMenuItem" mnemonicParsing="false" text="Delete a Page" />
                
                <MenuItem fx:id="highlightTextMenuItem" mnemonicParsing="false" text="Highlight Text" />
+               <MenuItem fx:id="replaceTextMenuItem" mnemonicParsing="false" text="Replace Text" />
                
             </items>
           </Menu>
