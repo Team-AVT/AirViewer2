@@ -38,6 +38,8 @@
                <MenuItem fx:id="addPagesMenuItem" mnemonicParsing="false" text="Add Blank Pages" />
                <MenuItem fx:id="deletePagesMenuItem" mnemonicParsing="false" text="Delete a Page" />
                
+               <MenuItem fx:id="highlightTextMenuItem" mnemonicParsing="false" text="Highlight Text" />
+               
             </items>
           </Menu>
            
