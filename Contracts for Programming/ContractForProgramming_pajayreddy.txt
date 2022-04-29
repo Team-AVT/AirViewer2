@@ -130,3 +130,41 @@ String convertedFilePath;
 1.	The condition "originalFilePath != null”  and "originalFilePath.length() > 0”  must be true before the constructor method can execute.
 2.	The condition "convertedFilePath != null " and "convertedFilePath.length() > 0”  must be true before the convertToHTML () method can execute.
 @post-condition: The condition "result == true" must be true when convertToHTML ()  method finished executing.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Class SetPassword
+
+/**
+ * @invariant ("password != null && password.length() > 0")
+ */
+public class SetPassword {
+    
+    String filePath;
+    String password;
+	  
+    /**
+     * @pre ("password != null && password.length() > 0"
+     */
+    public SetPassword(String filePath, String password) {
+	super();
+	this.filePath = filePath;
+	this.password = password;
+	}
+
+    /**
+     * @pre ("password != null && password.length() > 0")
+     * @post ("result == true")
+     */
+     public boolean setPassword() throws IOException {
+		  
+      }
+    }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@ Invariant: The condition "password != null” and “password.length() > 0" must be true of a class whenever it is accessible to the client.
+
+@pre-condition: 
+1.	The condition "password != null”  and "password.length() > 0”  must be true before the constructor method can execute.
+2.	The condition "password != null " and "password.length() > 0”  must be true before the setPassword() method can execute.
+@post-condition: The condition "result == true" must be true when setPassword() method finished executing.
