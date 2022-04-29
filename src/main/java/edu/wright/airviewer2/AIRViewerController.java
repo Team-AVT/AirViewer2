@@ -106,6 +106,9 @@ public class AIRViewerController implements Initializable {
     
     @FXML
     private MenuItem setFontSizeMenuItem;
+	
+    @FXML
+    private MenuItem passwordMenuItem;
 
     private AIRViewerModel model;
 
@@ -194,6 +197,8 @@ public class AIRViewerController implements Initializable {
 	assert highlightTextMenuItem != null : "fx:id=\"highlightTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert replaceTextMenuItem != null : "fx:id=\"replaceTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert setFontSizeMenuItem != null : "fx:id=\"setFontSizeMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	    
+	assert passwordMenuItem != null : "fx:id=\"passwordMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         if (null != model) {
             pagination.setPageCount(model.numPages());
@@ -219,6 +224,8 @@ public class AIRViewerController implements Initializable {
 	    highlightTextMenuItem.setDisable(false);
 	    replaceTextMenuItem.setDisable(false);
 	    setFontSizeMenuItem.setDisable(false);
+		
+	    passwordMenuItem.setDisable(false);
 
 
             if (null != currentPageImageView) {
@@ -280,6 +287,8 @@ public class AIRViewerController implements Initializable {
 	    highlightTextMenuItem.setDisable(true);
 	    replaceTextMenuItem.setDisable(true);
 	    setFontSizeMenuItem.setDisable(true);
+		
+	    passwordMenuItem.setDisable(true);
         }
     }
 
@@ -307,6 +316,8 @@ public class AIRViewerController implements Initializable {
 	assert highlightTextMenuItem != null : "fx:id=\"highlightTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert replaceTextMenuItem != null : "fx:id=\"replaceTextMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert setFontSizeMenuItem != null : "fx:id=\"setFontSizeMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	    
+	assert passwordMenuItem != null : "fx:id=\"passwordMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 
         model = aModel;
 
@@ -674,6 +685,59 @@ public class AIRViewerController implements Initializable {
               }
 
             });
+	    
+	     passwordMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            	@Override
+              public void handle(ActionEvent e) {
+              	// logic to take input 
+              	
+               	
+              	Dialog<String>  dialog = new Dialog<String>();
+              	dialog.setTitle("Set Password Dialog Box");
+              	
+              	ButtonType ok = new ButtonType("Ok", ButtonData.OK_DONE);
+              	ButtonType cancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+                  
+                  //Setting the content of the dialog
+                  dialog.setContentText("Set Password");
+                
+                  //Adding buttons to the dialog pane
+                  dialog.getDialogPane().getButtonTypes().add(ok);
+                  dialog.getDialogPane().getButtonTypes().add(cancel);
+                  //Setting the label
+
+                 Label Label = new Label("Enter the password you want to set");
+              	
+                 TextField password = new TextField();
+                 
+                 
+                 VBox vBox = new VBox();
+
+                 vBox.setSpacing(8);
+                 vBox.setPadding(new Insets(10,10,10,10));
+                 vBox.getChildren().addAll(
+                    Label, password);
+                 
+                 dialog.getDialogPane().setContent(vBox); 
+              	
+                 dialog.showAndWait();
+                 
+                 System.out.println(password.getText());
+          	   
+                 SetPassword passObj = new SetPassword(model.getStrPath(), password.getText());
+                 
+                 try {
+					passObj.setPassword();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+          	   
+                  refreshUserInterface();
+              }
+
+            });
+
 
 
         }

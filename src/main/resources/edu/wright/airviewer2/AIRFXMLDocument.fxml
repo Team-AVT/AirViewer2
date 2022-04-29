@@ -54,6 +54,13 @@
             </items>
           </Menu>
            
+           <Menu mnemonicParsing="false" text="Protect">
+            <items>
+                  <MenuItem fx:id="passwordMenuItem" mnemonicParsing="false" text="Set Password" />
+                  
+            </items>
+          </Menu>
+           
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
