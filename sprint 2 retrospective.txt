@@ -1,0 +1,7 @@
+what went well.
+
+-good collaboration with the team.
+-overcame the issues faced in sprint 1 like, Estimating time required to complete user-stories/tasks.
+-improved on concepts like literate programming and programming by contract.
+-picking user-stories that have clear acceptance criteria.
+-final product is deliverable.
